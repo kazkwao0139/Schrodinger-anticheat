@@ -66,6 +66,8 @@ This software is proprietary. No part of this software may be reproduced, distri
 
 Reverse engineering, decompilation, and disassembly of the binary components are strictly prohibited.
 
+I would like to open-source the detection logic, but due to the nature of anti-cheat and security systems, I am unable to do so. I appreciate your understanding.
+
 ---
 
 # Schrodinger Anti-Cheat (한국어)
@@ -135,3 +137,5 @@ All rights reserved.
 이 소프트웨어는 독점 소프트웨어입니다. 저작자의 사전 서면 동의 없이 본 소프트웨어의 어떠한 부분도 복제, 배포, 수정 또는 사용할 수 없습니다.
 
 바이너리 구성 요소에 대한 역공학, 디컴파일, 디스어셈블리는 엄격히 금지됩니다.
+
+로직을 공개하고 싶지만, 안티치트와 보안이라는 특성상 공개할 수 없음을 양해 부탁드립니다.
