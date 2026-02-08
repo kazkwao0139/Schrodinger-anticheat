@@ -126,7 +126,7 @@ Schrodinger는 마우스 움직임 패턴을 실시간으로 분석하여 에임
 
 Schrodinger 엔진은 인간과 기계를 구별해야 하는 모든 분야에 적용 가능합니다.
 
-**TTS/딥페이크 음성 탐지**: TTS 탐지기(v5)는 40명의 인간 화자(LibriSpeech dev-clean, 화자당 ~480초) + 21개 TTS 샘플(Google TTS, Microsoft Edge TTS, 7개 언어)로 구성된 테스트셋에서 100% 정확도를 달성했습니다. 인간 음성 오탐률 0%. 대수의 법칙에 의해 오디오가 길수록 탐지 안정성이 높아지며, 짧은 클립(<5초)에서는 불안정할 수 있습니다. 이 수렴은 TTS에도 동일하게 적용되어, 긴 TTS 오디오는 더 확실하게 TTS로 수렴합니다 (50초 gTTS, 40초 Edge TTS 검증 완료). 전화 통화 등 연속 음성 스트림 환경에 최적화되어 있습니다. numpy, scipy 등 무거운 의존성 때문에 바이너리 파일로 제공하기는 현재로서 어렵습니다.
+**TTS/딥페이크 음성 탐지**: TTS 탐지기(v5)는 40명의 인간 화자(LibriSpeech dev-clean, 화자당 ~480초) + 21개 TTS 샘플(Google TTS, Microsoft Edge TTS, 7개 언어)로 구성된 테스트셋에서 100% 정확도를 달성했습니다. 인간 음성 오탐률 0%. 대수의 법칙에 의해 오디오가 길수록 탐지 안정성이 높아지며, 짧은 클립(<5초)에서는 불안정할 수 있습니다. 이 수렴은 TTS에도 동일하게 적용되어, 긴 TTS 오디오는 더 확실하게 TTS로 수렴합니다 (50초 gTTS, 40초 Edge TTS 검증 완료). 전화 통화 등 연속 음성 스트림 환경에 최적화되어 있습니다. 물리 기반 접근은 이론적으로 유효하나, 61개 샘플은 제한된 테스트셋이며 실제 배포 전 대규모 검증(1000+ 화자, 더 많은 TTS 엔진)이 필요합니다. numpy, scipy 등 무거운 의존성 때문에 바이너리 파일로 제공하기는 현재로서 어렵습니다.
 
 RF IFF(피아식별), 변조 방지, 음성 지문 등 다른 분야도 이론적으로는 적용 가능하며, 현재 시뮬레이션 단계에서 동작합니다.
 
@@ -148,6 +148,7 @@ All rights reserved.
 - Tested against: Google TTS, Microsoft Edge TTS (7 languages, 12 voices), Windows SAPI5
 - Human data: LibriSpeech dev-clean (40 speakers, ~480s per speaker)
 - Law of Large Numbers: detection reliability scales with audio length. Short clips (<5s) may produce unstable results. The detector is designed for continuous voice streams (e.g. phone calls), not short utterances. This convergence applies equally to TTS — longer TTS audio converges more reliably to TTS, not toward human. Verified with 50s gTTS and 40s Edge TTS concatenations.
+- Note: The physics-based approach is theoretically sound, but 61 samples is a limited test set. Larger-scale validation (1000+ speakers, more TTS engines) is needed before production deployment.
 
 ### TTS Detector v4 (2025)
 - Initial detection approach
